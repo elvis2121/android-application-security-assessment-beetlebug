@@ -19,6 +19,20 @@ Performed a controlled Android application assessment using static analysis, ADB
 - jq
 - Android emulator
 
+## Findings Summary
+Built only from the observations documented in the Steps below. TODO (author): add the risk ratings and remediation referenced in the objective.
+
+| ID | Issue | OWASP category | Severity | Fix | Evidence |
+|---|---|---|---|---|---|
+| BB-01 | Folder-unlock PIN hardcoded in `strings.xml` | OWASP Mobile M1:2024 Improper Credential Usage | TBD by author | TBD by author | Refs 1-3 |
+| BB-02 | Promo code hardcoded and discount enforced client-side | OWASP Mobile M7:2024 Insufficient Binary Protections | TBD by author | TBD by author | Refs 4-5 |
+| BB-03 | Username, password and flag stored in plaintext Shared Preferences | OWASP Mobile M9:2024 Insecure Data Storage | TBD by author | TBD by author | Refs 6-7 |
+| BB-04 | Master PIN stored as readable text in local SQLite `user.db` | OWASP Mobile M9:2024 Insecure Data Storage | TBD by author | TBD by author | Refs 8-9 |
+| BB-05 | SQL injection returns other users' usernames, passwords and card values | OWASP Mobile M4:2024 Insufficient Input/Output Validation | TBD by author | TBD by author | Ref 10 |
+| BB-06 | Firebase Realtime Database readable without authentication | OWASP Mobile M8:2024 Security Misconfiguration | TBD by author | TBD by author | Refs 11-14 |
+| BB-07 | Card number and flag written to Logcat | OWASP Mobile M6:2024 Inadequate Privacy Controls | TBD by author | TBD by author | Refs 15-16 |
+| BB-08 | Exported `b33tleAdministrator` activity opens the admin dashboard without authentication | OWASP Mobile M3:2024 Insecure Authentication/Authorization | TBD by author | TBD by author | Refs 17-18 |
+
 ## Steps
 
 *Ref 1: Static analysis in JADX shows the folder-unlock PIN being compared against a resource string instead of a value generated or protected at runtime.*
